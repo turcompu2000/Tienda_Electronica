@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\api\ProductosController;
+use App\Http\Controllers\api\VentasController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +26,9 @@ Route::get('/productos', [ProductosController::class, 'index'])->name('productos
 Route::delete('/productos/{producto}', [ProductosController::class, 'destroy'])->name('productos.destroy');
 Route::get('/productos/{producto}', [ProductosController::class, 'show'])->name('productos.show');
 Route::put('/productos/{producto}', [ProductosController::class, 'update'])->name('productos.update');
+
+Route::post('/ventas', [VentasController::class, 'store'])->name('ventas.store');
+Route::get('/ventas', [VentasController::class, 'index'])->name('ventas');
+Route::delete('/ventas/{venta}', [VentasController::class, 'destroy'])->name('ventas.destroy');
+Route::get('/ventas/{venta}', [VentasController::class, 'show'])->name('ventas.show');
+Route::put('/ventas/{venta}', [VentasController::class, 'update'])->name('ventas.update');
