@@ -3,6 +3,7 @@
 use App\Http\Controllers\api\ProductosController;
 use App\Http\Controllers\api\VentasController;
 use App\Http\Controllers\api\ClientesController;
+use App\Http\Controllers\api\CategoriasController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,3 +40,9 @@ Route::get('/clientes', [ClientesController::class, 'index'])->name('clientes');
 Route::delete('/clientes/{cliente}', [ClientesController::class, 'destroy'])->name('clientes.destroy');
 Route::get('/clientes/{cliente}', [ClientesController::class, 'show'])->name('clientes.show');
 Route::put('/clientes/{cliente}', [ClientesController::class, 'update'])->name('clientes.update');
+
+Route::post('/categorias', [CategoriasController::class, 'store'])->name('categorias.store');
+Route::get('/categorias', [CategoriasController::class, 'index'])->name('categorias');
+Route::delete('/categorias/{categoria}', [CategoriasController::class, 'destroy'])->name('categorias.destroy');
+Route::get('/categorias/{categoria}', [CategoriasController::class, 'show'])->name('categorias.show');
+Route::put('/categorias/{categoria}', [CategoriasController::class, 'update'])->name('categorias.update');
